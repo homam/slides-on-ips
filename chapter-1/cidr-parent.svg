@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="254pt"
+  height="118pt" viewBox="0.00 0.00 254.39 118.00">
+  <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 114)">
+    <title>%0</title>
+    <polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-114 250.3906,-114 250.3906,4 -4,4" />
+    <!-- 188.88.191.0/24 -->
+    <g id="node1" class="node">
+      <title>188.88.191.0/24</title>
+      <polygon fill="#03b903" stroke="#000000"
+        points="66,-73.5 66,-109.5 173.3906,-109.5 173.3906,-73.5 66,-73.5" />
+      <text text-anchor="middle" x="119.6953" y="-87.3" font-family="Times,serif" font-size="14.00"
+        fill="#000000">188.88.191.0/24</text>
+    </g>
+    <!-- 188.88.191.0/25 -->
+    <g id="node2" class="node">
+      <title>188.88.191.0/25</title>
+      <polygon fill="#458fff" stroke="#000000" points="0,-.5 0,-36.5 107.3906,-36.5 107.3906,-.5 0,-.5" />
+      <text text-anchor="middle" x="53.6953" y="-14.3" font-family="Times,serif" font-size="14.00"
+        fill="#000000">188.88.191.0/25</text>
+    </g>
+    <!-- 188.88.191.0/24&#45;&#45;188.88.191.0/25 -->
+    <g id="edge1" class="edge">
+      <title>188.88.191.0/24--188.88.191.0/25</title>
+      <path fill="none" stroke="#000000"
+        d="M103.3807,-73.4551C93.2267,-62.2241 80.2126,-47.8298 70.051,-36.5904" />
+    </g>
+    <!-- 188.88.191.128/25 -->
+    <g id="node3" class="node">
+      <title>188.88.191.128/25</title>
+      <polygon fill="#f54545" stroke="#000000"
+        points="125,-.5 125,-36.5 246.3906,-36.5 246.3906,-.5 125,-.5" />
+      <text text-anchor="middle" x="185.6953" y="-14.3" font-family="Times,serif" font-size="14.00"
+        fill="#000000">188.88.191.128/25</text>
+    </g>
+    <!-- 188.88.191.0/24&#45;&#45;188.88.191.128/25 -->
+    <g id="edge2" class="edge">
+      <title>188.88.191.0/24--188.88.191.128/25</title>
+      <path fill="none" stroke="#000000"
+        d="M136.0099,-73.4551C146.1639,-62.2241 159.178,-47.8298 169.3396,-36.5904" />
+    </g>
+  </g>
+</svg>
