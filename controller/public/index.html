@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Page</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const ws = new WebSocket('ws://' + window.location.host);
+            ws.onmessage = function(event) {
+                console.log('Command received:', event.data);
+            };
+        });
+    </script>
+</head>
+<body>
+    <h1>Index Page</h1>
+    <p>Check the console for messages.</p>
+</body>
+</html>
