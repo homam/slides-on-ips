@@ -1,24 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no">
     <title>Control Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            touch-action: none;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        button, input {
+            display: block;
+            width: calc(100% - 20px);
+            max-width: calc(100% - 20px);
+            /* 50% of the parent width minus 20px (10px margin on each side) */
+            margin: 20px 10px 20px 10px;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input {
+            background-color: #f1f1f1;
+            color: black;
+            width: calc(100% - 40px);
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const ws = new WebSocket('ws://' + window.location.host);
-            document.getElementById('next').addEventListener('click', function() {
+        document.addEventListener('DOMContentLoaded', function () {
+            const ws = new WebSocket('wss://' + window.location.host);
+            document.getElementById('next').addEventListener('click', function () {
                 ws.send('next');
             });
-            document.getElementById('back').addEventListener('click', function() {
-                ws.send('back');
+            document.getElementById('prev').addEventListener('click', function () {
+                ws.send('prev');
+            });
+            document.getElementById('fullscreen').addEventListener('click', function () {
+                ws.send('fullscreen');
+            });
+            document.getElementById('gotoButton').addEventListener('click', function () {
+                const input = document.getElementById('gotoInput').value;
+                ws.send('goto' + input);
             });
         });
     </script>
 </head>
+
 <body>
     <h1>Control Page</h1>
+    <button id="fullscreen">Full Screen</button>
+    <hr />
+    <button id="prev">Back</button>
     <button id="next">Next</button>
-    <button id="back">Back</button>
+    <hr />
+    <input type="number" id="gotoInput" placeholder="Page number" pattern="[0-9]*" inputmode="numeric">
+    <button id="gotoButton">Go To</button>
 </body>
+
 </html>

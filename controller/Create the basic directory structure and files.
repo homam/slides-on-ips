@@ -1,3 +1,0 @@
-mkdir public
-touch public/index.html public/control.html
-touch app.js

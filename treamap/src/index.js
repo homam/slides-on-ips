@@ -3,13 +3,13 @@ import sam from "./data/sam-ae-ips.json";
 import {CidrWrap} from './CidrWrap';
 const {tree:originalTree} = sam;
 
-const targetCidr = new CidrWrap('37.245.192.0/19');// new CidrWrap('37.245.0.0/16');  // new CidrWrap('37.245.208.0/20');
+const targetCidr = new CidrWrap('2a00:f28:480::/43');// new CidrWrap('37.245.0.0/16');  // new CidrWrap('37.245.208.0/20');
 
 
 const tree = originalTree
-  .filter(t => t.node.indexOf(".") !== -1)
+  .filter(t => t.node.indexOf(":") !== -1)
   .map(t => ({...t, cidr: new CidrWrap(t.node)}))
-  // .filter(t => targetCidr.contains(t.cidr))
+  .filter(t => targetCidr.contains(t.cidr))
   .map(t => ({
     ...t,
     invisible: new CidrWrap('37.245.208.0/20').contains(t),

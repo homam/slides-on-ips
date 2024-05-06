@@ -41,6 +41,12 @@ section.answer::before {
 ---
 
 <!-- _class: lead large -->
+# Interrupt
+# Ask questions
+
+---
+
+<!-- _class: lead large -->
 # Non-Hierarchical Data Structures
 
 <!-- Most of the data that we deal with every day is not very hierarchical. Some examples: -->
@@ -153,6 +159,8 @@ Back to [ipinfo.io](http://ipinfo.io) you can see that IPs also reveal your geo 
 
 <!-- _class: lead large -->
 # How does IP geo location work❓
+
+![bg contain right](onphone.png)
 
 ---
 
@@ -888,7 +896,18 @@ section {
 
 ---
 
-## How do carriers assign an IP address to device?
+## High HE does not mean High CR
+
+```
+2a00:f28:480::/43	
+```
+<!-- 5.31.128.0/18 -->
+
+![width:1140](high-he-low-cr-range.png)
+
+---
+
+## How do carriers assign an IP address to a device?
 
 - Dynamic Host Configuration Protocol **(DHCP)**
   1. **Device Connects:** When a mobile phone connects to the mobile network, it sends a request for an IP address.
@@ -945,6 +964,8 @@ A collection of CIDRs
 - Reserved Blocks and Private IPs
 - Binary numbers
 - Net masks
+- Set Theory
+- IP Exclusion
 - CIDR math on paper, SQL, Python and JS
 - Recursive Tree Algorithms
 - Binary Search

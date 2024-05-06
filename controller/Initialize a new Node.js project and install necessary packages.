@@ -1,4 +1,0 @@
-mkdir nodejs-websocket-app
-cd nodejs-websocket-app
-npm init -y
-npm install express ws
