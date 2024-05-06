@@ -7,6 +7,8 @@ const server = http.createServer(app);
 const wss = new WebSocket.Server({ server });
 
 app.use(express.static('public'));
+app.use('/static', express.static('static'));
+
 
 wss.on('connection', function connection(ws) {
     ws.on('message', function incoming(message) {
@@ -23,3 +25,4 @@ const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
+
