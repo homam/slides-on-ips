@@ -1,0 +1,15 @@
+{
+  "name": "nodejs-websocket-app",
+  "version": "1.0.0",
+  "description": "A Node.js Express app with WebSocket for real-time communication between two pages.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "ws": "^7.4.6"
+  },
+  "author": "",
+  "license": "ISC"
+}
