@@ -45,8 +45,16 @@
         }
     </style>
     <script>
+        let ws = null;
+        function connectWebSocket() {
+            ws = new WebSocket('wss://' + window.location.host);
+            ws.addEventListener('close', function () {
+                // Reconnect after a delay
+                setTimeout(connectWebSocket, 2000);
+            });
+        }
         document.addEventListener('DOMContentLoaded', function () {
-            const ws = new WebSocket('wss://' + window.location.host);
+            connectWebSocket();
             document.getElementById('next').addEventListener('click', function () {
                 ws.send('next');
             });
@@ -61,6 +69,7 @@
                 ws.send('goto' + input);
             });
         });
+    </script>
     </script>
 </head>
 

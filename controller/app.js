@@ -12,8 +12,13 @@ app.get('/', (req, res) => {
     let file = readFileSync('../chapter-1/index.html', 'utf8');
     file = file.replace('</body>', `
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const ws = new WebSocket('wss://' + window.location.host);
+    let ws = null;
+    function connectWebSocket() {
+        ws = new WebSocket('wss://' + window.location.host);
+        ws.addEventListener('close', function () {
+            // Reconnect after a delay
+            setTimeout(connectWebSocket, 2000);
+        });
         ws.onmessage = function(event) {
             console.log('Command received:', event.data);
             if(event.data == 'next') {
@@ -27,6 +32,9 @@ app.get('/', (req, res) => {
                 document.location.hash = page;
             }
         };
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+       connectWebSocket();
     });
     </script>
     </body>
