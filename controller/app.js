@@ -43,12 +43,14 @@ app.get('/', (req, res) => {
     res.send(file);
 });
 
-app.use(express.static('../chapter-1'));
+app.use(express.static('../chapter-2'));
 app.use(express.static('public'));
 app.use('/static', express.static('static'));
 
 
-wss.on('connection', function connection(ws) {
+wss.on('connection', function connection(ws
+    
+) {
     ws.on('message', function incoming(message) {
         // Broadcast incoming message to all clients except the sender
         wss.clients.forEach(function each(client) {

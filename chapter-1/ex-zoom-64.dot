@@ -1,0 +1,12 @@
+graph{
+    fontname="Helvetica"
+    node [ shape=record fontname="Helvetica" ];
+    rankdir = TB;
+    splines=false;
+
+
+"96.0.0.0/3"[label=<{<B>96.0.0.0/3</B>|{{2240|8}|{0.4%}}}>, style=filled, fillcolor="#FF8884"]
+"64.0.0.0/2"[label=<{<B>64.0.0.0/2</B>|{{2800|19}|{0.7%}}}>, style=filled, fillcolor="#ffea00ed"]
+"64.0.0.0/3"[label=<{<B>64.0.0.0/3</B>|{{560|11}|{2.0%}}}>]
+"64.0.0.0/2" -- {"96.0.0.0/3", "64.0.0.0/3"}
+}

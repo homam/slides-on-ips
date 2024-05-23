@@ -202,23 +202,24 @@ IPv4: `188.088.016.001`
 
 IPv6: `2001:8f8:1f26:0:800:f66c:9a2f:6913` 
 
-IPv6: `2001:8f8:1f26:0000:0800:f66c:9a2f:6913` 
+IPv6: `2001:08f8:1f26:0000:0800:f66c:9a2f:6913` 
 
 ---
 
 ### Shorthand notations for IPv6
     
-  IPv6: `2001:8f8:1f26:0000:0800:0000:0000:0000` 
+  IPv6: `2001:08f8:1f26:0000:0800:0000:0000:0000` 
 
   IPv6: `2001:8f8:1f26:0:800::`
 $-------$
 
-  IPv6: `2001:8f8:1f26:0000:0800:0000:0000:6913` 
+  IPv6: `2001:8f8:1f26:0000:0800:0:0:6913` 
 
   IPv6: `2001:8f8:1f26:0:800::6913`
 $-------$
 
-  - Replace blocks of `0`s with `::`
+  - Remove leading `0`s in each segment
+  - Replace segments of `0:0`s with `::`
 
 ---
 
@@ -672,10 +673,21 @@ Let's analyze this!
 
 ---
 
-Should we exclude 
+What about
 `64.0.0.0/2`:question:
 
 ![bg contain](tree-red-nodes-2.svg)
+
+---
+
+
+**Should we exclude 
+`64.0.0.0/2`:question:**
+
+![bg right contain](ex-zoom-64.svg)
+
+- Case for Excluding: this node's CR is lower than our threshold of 1%. By how much❓
+- Case for Not Excluding: maybe we miss on high CR traffic from this child: `64.0.0.0/3`
 
 ---
 
@@ -763,7 +775,7 @@ section.right-text p {
 </style>
 
 <!-- _class: right-text -->
-HE $\ge$ 40% -> Green
+HE $\ge$ 40% -> Green otherwise Red
 
 ![bg contain](treemap-he-2.svg)
 
@@ -775,7 +787,7 @@ section p {
 </style>
 
 Treemap representation is 
-equivalent
+equivalent to the tree
 
 ![bg contain ](treemap-he-2.svg)
 
@@ -961,7 +973,6 @@ A collection of CIDRs
 
 ## Next session
 
-- Reserved Blocks and Private IPs
 - Binary numbers
 - Net masks
 - Set Theory
